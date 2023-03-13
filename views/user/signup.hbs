@@ -1,0 +1,68 @@
+<section>
+  <div class="container mt-5" style="width: 35rem;">
+    <div class="col-md-12 m-4">
+      <h2>Create New Account</h2>
+      <form action="/signup" method="post">
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="registerName"
+            name="Name"
+            class="form-control"
+          />
+          <label class="form-label" for="registerName">Name</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="registerUsername"
+            name="Username"
+            class="form-control"
+          />
+          <label class="form-label" for="registerUsername">Username</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="email"
+            id="registerEmail"
+            name="Email"
+            class="form-control"
+          />
+          <label class="form-label" for="registerEmail">Email</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="password"
+            id="registerPassword"
+            name="Password"
+            class="form-control"
+          />
+          <label class="form-label" for="registerPassword">Password</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="password"
+            id="registerRepeatPassword"
+            name="RepPassword"
+            class="form-control"
+          />
+          <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+        </div>
+        <div class="form-check d-flex justify-content-center mb-4">
+          <input
+            class="form-check-input me-2"
+            type="checkbox"
+            value=""
+            id="registerCheck"
+            {{!-- checked --}}
+            aria-describedby="registerCheckHelpText"
+          />
+          <label class="form-check-label" for="registerCheck">
+            I have read and agree to the terms
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mb-3">Sign in</button>
+      </form>
+    </div>
+  </div>
+</section>

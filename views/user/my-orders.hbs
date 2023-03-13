@@ -1,0 +1,91 @@
+<section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mt-3 border">
+        <div class="p-3">
+          <h4>Filters</h4>
+        </div>
+        <div class="ps-3">
+          <div class="form-check mb-3 small">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="subscribe"
+            />
+            <label class="form-check-label" for="subscribe">
+              One
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <div class="pt-3 ms-4">
+            <h4 class="fw-bold mb-4">Your Orders</h4>
+          </div>
+
+          <div class="ms-3">
+            <div class="input-group rounded w-100">
+              <input
+                type="search"
+                class="form-control rounded"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <div>
+            {{#each orders}}
+            <div class="bg-white card m-3 shadow-sm">
+            <div class="p-4">
+              <div>
+                <div class="prod-detail w-100">
+                  <a href="#">
+                    <span class="float-end text-info">{{this.orderStatus}}
+                      <i class="icofont-check-circled text-success"></i></span>
+                  </a>
+                  {{! <h6 class="mb-2">
+                                            <a href="#"></a>
+                                            <a href="#" class="text-black">Gus's World Famous Fried Chicken</a>
+                                        </h6> }}
+                  <p class="text-gray mb-2"><i class="fas fa-thin fa-list"></i>
+                    ORDER #{{this._id}}</p>
+                  <p class="text-gray mb-2"><i class="fas fa-thin fa-clock"></i>
+                    {{this.orderedDate}}</p>
+                  <p class="text-gray mb-2"><i class="fas fa-light fa-address-card"></i>
+                    {{this.delivery.address1}},{{this.delivery.city}},{{this.delivery.state}}-{{this.delivery.pin}}</p>  
+                  <p class="text-gray mb-2"><i class="fas fa-thin fa-money-check-dollar"></i>
+                    {{this.payment}}</p>
+                  <hr />
+                  <div class="float-end">
+                    <a class="btn btn-sm btn-outline-primary" href="/view-order-item/{{this._id}}"><i
+                        class="icofont-headphone-alt"
+                      ></i>
+                      View Items</a>
+                    <a class="btn btn-sm btn-primary" href="#"><i
+                        class="icofont-refresh"
+                      ></i>
+                      REORDER</a>
+                  </div>
+                  <p class="mb-0 text-primary pt-2"><span
+                      class="text-primary fw-bold"
+                    > Total Paid:</span>
+                    ₹{{this.amount}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

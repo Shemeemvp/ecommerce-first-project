@@ -1,0 +1,42 @@
+<section>
+  <div class="container">
+    <div class="orders m-3">
+      <h3>Orders</h3>
+    </div>
+    <hr>
+    <div class="mt-3 mb-4">
+      <table class="table" id="orderTable">
+      <thead>
+        <tr>
+          {{!-- <th scope="col">#</th> --}}
+          <th scope="col">Order ID</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Delivery Address</th>
+          <th scope="col">Items</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each orders}}
+          <tr>
+            {{!-- <th scope="row">{{@index}}</th> --}}
+            <td>{{this._id}}</td>
+            <td>{{this.orderedDate}}</td>
+            <td>{{this.userId}}</td>
+            <td>{{this.delivery.name}}<br>{{this.delivery.address1}},{{this.delivery.city}},{{this.delivery.state}} - {{this.delivery.pin}}<br> Mobile - {{this.delivery.mobile}}</td>
+            <td>Items X 1</td>
+            <td style="white-space: nowrap;">
+              <a href="#" class="btn btn-success me-1">Ship</a><a href="#" class="btn btn-danger">Cancel</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+<script>
+  let table = new DataTable('#orderTable');
+
+</script>
