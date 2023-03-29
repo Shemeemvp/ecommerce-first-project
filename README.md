@@ -38,6 +38,3 @@ npm install
 # Run Server
 npm start
 
-
-## License
---
