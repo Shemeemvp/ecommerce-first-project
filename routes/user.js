@@ -31,7 +31,7 @@ router.get("/", async function (req, res, next) {
   }
 
   productHelper.getAllProducts().then((products) => {
-    res.render("user/view-products", { products, user, cartCount });
+    res.render("user/products", { products, user, cartCount });
   });
 });
 
